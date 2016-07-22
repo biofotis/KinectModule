@@ -127,6 +127,8 @@ namespace KinectModule
             public double righthandX = 0;
             public double righthandY = 0;
             public double righthandZ = 0;
+            public bool rightgrip = false;
+            public bool leftgrip = false;
         }
         
         public KinectData mKinectData;
@@ -232,7 +234,7 @@ namespace KinectModule
             mKinectData.mAU.LefteyebrowLowerer.ToString() + "," + mKinectData.mAU.LefteyeClosed.ToString() + "," + mKinectData.mAU.LipCornerDepressorLeft.ToString() + "," +
             mKinectData.mAU.LipCornerDepressorRight.ToString() + "," + mKinectData.mAU.LipCornerPullerLeft.ToString() + "," + mKinectData.mAU.LipCornerPullerRight.ToString() + "," +
             mKinectData.mAU.LipPucker.ToString() + "," + mKinectData.mAU.LipStretcherLeft.ToString() + "," + mKinectData.mAU.LipStretcherRight.ToString() + "," +
-            mKinectData.mAU.LipStretcherRight.ToString() + "," + mKinectData.mAU.LowerlipDepressorLeft.ToString() + "," + mKinectData.mAU.LowerlipDepressorRight.ToString() + "," +
+            mKinectData.mAU.LowerlipDepressorLeft.ToString() + "," + mKinectData.mAU.LowerlipDepressorRight.ToString() + "," +
             mKinectData.mAU.RightcheekPuff.ToString() + "," + mKinectData.mAU.RighteyebrowLowerer.ToString() + "," + mKinectData.mAU.RighteyeClosed.ToString() + "," +  
             System.Environment.NewLine;
 
@@ -253,6 +255,7 @@ namespace KinectModule
             if (activelog == false)
             {
                 activelog = true;
+                logtime = 0;
                 currentID = System.Convert.ToInt16(participantID); //store participant's ID
                 System.Threading.Thread.Sleep(500); //wait for 0.5 second to create the file
                 kinectcache = "Log file for participant ID:" + participantID + " Started on:" + DateTime.Now.TimeOfDay + "," +
@@ -567,6 +570,16 @@ namespace KinectModule
                                 mKinectData.mPointing.righthandX = target.Joints[JointType.HandTipRight].Position.X;
                                 mKinectData.mPointing.righthandY = target.Joints[JointType.HandTipRight].Position.Y;
                                 mKinectData.mPointing.righthandZ = target.Joints[JointType.HandTipRight].Position.Z;
+                                //grip state
+                                if (target.HandLeftState == HandState.Lasso || target.HandLeftState == HandState.Closed)
+                                    mKinectData.mPointing.leftgrip = false;
+                                else
+                                    mKinectData.mPointing.leftgrip = true;
+                                if (target.HandRightState == HandState.Lasso || target.HandRightState == HandState.Closed)
+                                    mKinectData.mPointing.rightgrip = false;
+                                else
+                                    mKinectData.mPointing.rightgrip = true;
+
                                 //lean body position
                                 mKinectData.mExtraData.leanX = target.Lean.X;
                                 mKinectData.mExtraData.leanY = target.Lean.Y;

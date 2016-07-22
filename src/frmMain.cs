@@ -103,6 +103,9 @@ namespace KinectModule
                     lbltxthandRX.Text = mKinectData.mPointing.righthandX.ToString("0.00");
                     lbltxthandRY.Text = mKinectData.mPointing.righthandY.ToString("0.00");
                     lbltxthandRZ.Text = mKinectData.mPointing.righthandZ.ToString("0.00");
+                    //grip status
+                    lbltxthandRgrip.Text = mKinectData.mPointing.rightgrip.ToString();
+                    lbltxthandLgrip.Text = mKinectData.mPointing.leftgrip.ToString();
                     //lean body position
                     lbltxtLeanX.Text = mKinectData.mExtraData.leanX.ToString("0.00");
                     lbltxtLeanY.Text = mKinectData.mExtraData.leanY.ToString("0.00");

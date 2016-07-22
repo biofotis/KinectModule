@@ -131,6 +131,10 @@
             this.CurrentVideoFrame = new System.Windows.Forms.PictureBox();
             this.chkVideo = new System.Windows.Forms.CheckBox();
             this.logbox = new System.Windows.Forms.ListBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.lbltxthandLgrip = new System.Windows.Forms.Label();
+            this.lbltxthandRgrip = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -168,7 +172,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(340, 361);
+            this.groupBox1.Location = new System.Drawing.Point(224, 346);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -256,11 +260,11 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Location = new System.Drawing.Point(340, 288);
+            this.groupBox2.Location = new System.Drawing.Point(340, 277);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(102, 64);
+            this.groupBox2.Size = new System.Drawing.Size(103, 67);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Face Direction";
@@ -448,7 +452,7 @@
             this.groupBox4.Controls.Add(this.label18);
             this.groupBox4.Controls.Add(this.label19);
             this.groupBox4.Enabled = false;
-            this.groupBox4.Location = new System.Drawing.Point(340, 211);
+            this.groupBox4.Location = new System.Drawing.Point(340, 203);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
@@ -540,11 +544,11 @@
             this.groupBox5.Controls.Add(this.lbltxtAudioAngle);
             this.groupBox5.Controls.Add(this.label22);
             this.groupBox5.Controls.Add(this.label23);
-            this.groupBox5.Location = new System.Drawing.Point(224, 323);
+            this.groupBox5.Location = new System.Drawing.Point(340, 345);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(112, 102);
+            this.groupBox5.Size = new System.Drawing.Size(112, 95);
             this.groupBox5.TabIndex = 29;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Additional Data";
@@ -1063,6 +1067,10 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.lbltxthandRgrip);
+            this.groupBox7.Controls.Add(this.lbltxthandLgrip);
+            this.groupBox7.Controls.Add(this.label20);
+            this.groupBox7.Controls.Add(this.label16);
             this.groupBox7.Controls.Add(this.chkPointing);
             this.groupBox7.Controls.Add(this.lbltxthandRZ);
             this.groupBox7.Controls.Add(this.lbltxthandRY);
@@ -1076,11 +1084,11 @@
             this.groupBox7.Controls.Add(this.label8);
             this.groupBox7.Controls.Add(this.label7);
             this.groupBox7.Controls.Add(this.label5);
-            this.groupBox7.Location = new System.Drawing.Point(224, 210);
+            this.groupBox7.Location = new System.Drawing.Point(224, 202);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox7.Size = new System.Drawing.Size(112, 111);
+            this.groupBox7.Size = new System.Drawing.Size(112, 142);
             this.groupBox7.TabIndex = 31;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Pointing";
@@ -1240,11 +1248,51 @@
             // logbox
             // 
             this.logbox.FormattingEnabled = true;
-            this.logbox.Location = new System.Drawing.Point(4, 432);
+            this.logbox.Location = new System.Drawing.Point(4, 445);
             this.logbox.Name = "logbox";
             this.logbox.ScrollAlwaysVisible = true;
-            this.logbox.Size = new System.Drawing.Size(540, 82);
+            this.logbox.Size = new System.Drawing.Size(540, 69);
             this.logbox.TabIndex = 49;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(3, 125);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(67, 13);
+            this.label16.TabIndex = 44;
+            this.label16.Text = "Hand R grip:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(3, 109);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(65, 13);
+            this.label20.TabIndex = 45;
+            this.label20.Text = "Hand L grip:";
+            // 
+            // lbltxthandLgrip
+            // 
+            this.lbltxthandLgrip.AutoSize = true;
+            this.lbltxthandLgrip.Location = new System.Drawing.Point(72, 109);
+            this.lbltxthandLgrip.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbltxthandLgrip.Name = "lbltxthandLgrip";
+            this.lbltxthandLgrip.Size = new System.Drawing.Size(29, 13);
+            this.lbltxthandLgrip.TabIndex = 46;
+            this.lbltxthandLgrip.Text = "false";
+            // 
+            // lbltxthandRgrip
+            // 
+            this.lbltxthandRgrip.AutoSize = true;
+            this.lbltxthandRgrip.Location = new System.Drawing.Point(72, 125);
+            this.lbltxthandRgrip.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbltxthandRgrip.Name = "lbltxthandRgrip";
+            this.lbltxthandRgrip.Size = new System.Drawing.Size(29, 13);
+            this.lbltxthandRgrip.TabIndex = 47;
+            this.lbltxthandRgrip.Text = "false";
             // 
             // KinectModule
             // 
@@ -1393,6 +1441,10 @@
         private System.Windows.Forms.ComboBox comboWasapiDevices;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ListBox logbox;
+        private System.Windows.Forms.Label lbltxthandRgrip;
+        private System.Windows.Forms.Label lbltxthandLgrip;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label16;
     }
 }
 
